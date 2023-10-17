@@ -32,11 +32,25 @@ public class Program
 
         try
         {
-            int a = int.Parse(null);
+            //int a = int.Parse(null);
+            //int a = int.Parse("test");
+            int a = int.Parse("-200000");
         }
         catch (ArgumentNullException ex)
         {
             Console.WriteLine("Boş değer giridinz.."); // TODO
+            Console.WriteLine(ex);
+        }
+
+        catch (FormatException ex)
+        {
+            Console.WriteLine("Veri tipi uygun değil."); // TODO
+            Console.WriteLine(ex);
+        }
+
+         catch (OverflowException ex)
+        {
+            Console.WriteLine("Intager sınırlarını aşan bir değer girdiniz"); // TODO
             Console.WriteLine(ex);
         }
 
